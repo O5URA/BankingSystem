@@ -1,0 +1,22 @@
+﻿<Page x:Class="BankingSystem.Register"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BankingSystem"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Register">
+
+    <Grid Margin="0,3,0,-3" Loaded="Grid_Loaded">
+        <Label x:Name="label" Content="NEW USER REGISTRATION" HorizontalAlignment="Center" Margin="0,89,0,0" VerticalAlignment="Top" Height="35" Width="222" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="label1" Content="First Name" HorizontalAlignment="Left" Margin="292,129,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txt_fname" HorizontalAlignment="Left" Margin="383,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btn_createAccount" Content="Create Account" HorizontalAlignment="Left" Margin="385,197,0,0" VerticalAlignment="Top" Click="btn_createAccount_Click" Height="28" Width="93"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,261,0,0"><Hyperlink NavigateUri="/Login.xaml"><Run Text="Login"/></Hyperlink></TextBlock>
+        <Label x:Name="label1_Copy" Content="Last Name" HorizontalAlignment="Left" Margin="292,160,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txt_lname" HorizontalAlignment="Left" Margin="383,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="2"/>
+        <Label x:Name="label_Copy" Content="WELCOME TO BANKING SYSTEM" HorizontalAlignment="Left" Margin="254,10,0,0" VerticalAlignment="Top" Height="43" Width="266" FontSize="16" FontWeight="Bold"/>
+
+    </Grid>
+</Page>
