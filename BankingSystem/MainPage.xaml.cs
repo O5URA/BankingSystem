@@ -49,8 +49,8 @@ namespace BankingSystem
         {
             try
             {
-                Global.GetBankDB.ProcessAllTransactions();
-                Global.GetBankDB.SaveToDisk();
+                BankServer.GetBankDB.ProcessAllTransactions();
+                BankServer.GetBankDB.SaveToDisk();
 
             }
             catch (Exception ex)

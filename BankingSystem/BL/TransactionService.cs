@@ -8,10 +8,10 @@ namespace BankingSystem.BL
     {
         public uint CreateTransaction(uint fromAccNo, uint toAccNo, uint amnt)
         {
-            var transactionId = Global.TransactionAccess.CreateTransaction();
-            Global.TransactionAccess.SetAmount(amnt);
-            Global.TransactionAccess.SetSendr(fromAccNo);
-            Global.TransactionAccess.SetRecvr(toAccNo);
+            var transactionId = BankServer.TransactionAccess.CreateTransaction();
+            BankServer.TransactionAccess.SetAmount(amnt);
+            BankServer.TransactionAccess.SetSendr(fromAccNo);
+            BankServer.TransactionAccess.SetRecvr(toAccNo);
 
             return transactionId;
 
@@ -19,26 +19,26 @@ namespace BankingSystem.BL
 
         internal List<uint> GetAllTransactions()
         {
-            return Global.TransactionAccess.GetTransactions();
+            return BankServer.TransactionAccess.GetTransactions();
         }
         internal void SelectTransaction(uint transId)
         {
-            Global.TransactionAccess.SelectTransaction(transId);
+            BankServer.TransactionAccess.SelectTransaction(transId);
         }
 
         internal  uint GetAmount()
         {
-            return Global.TransactionAccess.GetAmount();
+            return BankServer.TransactionAccess.GetAmount();
         }
 
         internal uint GetFromAccount()
         {
-            return Global.TransactionAccess.GetSendrAcct();
+            return BankServer.TransactionAccess.GetSendrAcct();
         }
 
         internal uint GetToAccount()
         {
-            return Global.TransactionAccess.GetRecvrAcct();
+            return BankServer.TransactionAccess.GetRecvrAcct();
         }
     }
 }

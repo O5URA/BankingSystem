@@ -28,7 +28,7 @@ namespace BankingSystem
         {
             InitializeComponent();
             accountSercive = new AccountService();
-            var accounts = accountSercive.GetAllAccounts(Global.CurrentUserId);
+            var accounts = accountSercive.GetAllAccounts(BankServer.CurrentUserId);
             Accounts = new List<uint>();
             Accounts.AddRange(accounts);
             cmb_accounts.ItemsSource = Accounts;

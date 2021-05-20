@@ -30,7 +30,7 @@ namespace BankingSystem
         private void btn_createAccount_Click(object sender, RoutedEventArgs e)
         {
            var userId =  _authService.CreateAccount(txt_fname.Text, txt_lname.Text);
-            Global.CurrentUserId = userId;
+            BankServer.CurrentUserId = userId;
             MessageBox.Show("Account Created Successfully. Your user ID is " + userId + ". Use this ID to login your account");
             this.NavigationService.Navigate(new Uri("MainPage.xaml", UriKind.Relative));
 

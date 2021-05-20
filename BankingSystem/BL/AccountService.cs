@@ -10,37 +10,37 @@ namespace BankingSystem.BL
     {
         public uint CreateAccount()
         {
-            var accountNo = Global.AccountAccess.CreateAccount(Global.CurrentUserId);
+            var accountNo = BankServer.AccountAccess.CreateAccount(BankServer.CurrentUserId);
             MessageBox.Show("New Account Created Successfully. Account Number : " + accountNo);
             return accountNo;
         }
 
         public void Deposit(uint accountNo, uint amount)
         {
-            Global.AccountAccess.SelectAccount(accountNo);
-            Global.AccountAccess.Deposit(amount);
+            BankServer.AccountAccess.SelectAccount(accountNo);
+            BankServer.AccountAccess.Deposit(amount);
         }
 
         public void SelectAccount(uint accountNo)
         {
-            Global.AccountAccess.SelectAccount(accountNo);
+            BankServer.AccountAccess.SelectAccount(accountNo);
         }
 
         public uint GetBalance(uint accountNo)
         {
-            Global.AccountAccess.SelectAccount(accountNo);
-            return Global.AccountAccess.GetBalance();
+            BankServer.AccountAccess.SelectAccount(accountNo);
+            return BankServer.AccountAccess.GetBalance();
         }
 
         internal void Withdraw(uint accNo, uint amnt)
         {
-            Global.AccountAccess.SelectAccount(accNo);
-            Global.AccountAccess.Withdraw(amnt);
+            BankServer.AccountAccess.SelectAccount(accNo);
+            BankServer.AccountAccess.Withdraw(amnt);
         }
 
         internal List<uint> GetAllAccounts(uint currentUserId)
         {
-            return Global.AccountAccess.GetAccountIDsByUser(Global.CurrentUserId);
+            return BankServer.AccountAccess.GetAccountIDsByUser(BankServer.CurrentUserId);
         }
     }
 }

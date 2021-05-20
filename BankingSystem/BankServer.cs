@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BankingSystem
 {
-    public class Global
+    public class BankServer
     {
         private BankDB.BankDB bankDB;
         public static BankDB.UserAccessInterface UserAccess { get; set; }
@@ -13,7 +13,7 @@ namespace BankingSystem
         public static BankDB.BankDB GetBankDB { get; set; }
         public static uint CurrentUserId { get; set; }
 
-        public Global()
+        public BankServer()
         {
             bankDB = new BankDB.BankDB();
             GetBankDB = bankDB;

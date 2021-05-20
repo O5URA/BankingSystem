@@ -21,11 +21,11 @@ namespace BankingSystem
     /// </summary>
     public partial class MainWindow : Window
     {
-        public readonly Global global;
+        public readonly BankServer server;
         public MainWindow()
         {
             InitializeComponent();
-            global = new Global();
+            server = new BankServer();
             _NavigationFrame.Navigate(new Login());
         }
 
@@ -35,8 +35,8 @@ namespace BankingSystem
         {
             try
             {
-                Global.GetBankDB.ProcessAllTransactions();
-                Global.GetBankDB.SaveToDisk();
+                BankServer.GetBankDB.ProcessAllTransactions();
+                BankServer.GetBankDB.SaveToDisk();
 
             }
             catch (Exception ex)

@@ -31,7 +31,7 @@ namespace BankingSystem
             InitializeComponent();
             transactionService = new TransactionService();
             accountService = new AccountService();
-            var accounts = accountService.GetAllAccounts(Global.CurrentUserId);
+            var accounts = accountService.GetAllAccounts(BankServer.CurrentUserId);
             Accounts = new List<uint>();
             Accounts.AddRange(accounts);
             cmb_accounts_from.ItemsSource = cmb_accounts_to.ItemsSource = Accounts;

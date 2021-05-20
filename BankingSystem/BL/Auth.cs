@@ -13,8 +13,8 @@ namespace BankingSystem.BL
   
         public uint CreateAccount(string fname, string lname)
         {
-            var userId = Global.UserAccess.CreateUser();
-            Global.UserAccess.SetUserName(fname, lname);
+            var userId = BankServer.UserAccess.CreateUser();
+            BankServer.UserAccess.SetUserName(fname, lname);
             return userId;
         }
 
@@ -22,11 +22,11 @@ namespace BankingSystem.BL
         {
             try
             {
-                var users = Global.UserAccess.GetUsers();
+                var users = BankServer.UserAccess.GetUsers();
                 if (users.Contains(userId))
                 {
-                    Global.UserAccess.SelectUser(userId);
-                    Global.CurrentUserId = userId;
+                    BankServer.UserAccess.SelectUser(userId);
+                    BankServer.CurrentUserId = userId;
                     return true;
                 }
                 else
@@ -48,7 +48,7 @@ namespace BankingSystem.BL
             try
             {
                 string fname; string lname;
-                Global.UserAccess.GetUserName(out fname, out lname);
+                BankServer.UserAccess.GetUserName(out fname, out lname);
                 return fname + " " + lname;
             }
             catch (Exception)
